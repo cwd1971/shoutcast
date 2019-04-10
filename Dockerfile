@@ -2,10 +2,11 @@ FROM centos:latest
 
 LABEL maintainer="cool.docker@coolwinkydoggendoodle.com"
 
-RUN yum -y update \
-    && mkdir -p \
-      /opt/shoutcast \
-      /var/log/shoutcast
+RUN yum -y update && \
+       yum clean all && \
+       mkdir -p \
+              /opt/shoutcast \
+              /var/log/shoutcast
 
 WORKDIR /opt/shoutcast
 
